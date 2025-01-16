@@ -56,35 +56,21 @@
 
   - `CMakeLists.txt`：CMake 的构建配置文件。
 
-    ├── CMakeLists.txt
-    ├── include
-    │   └── Realsense.hpp
-    ├── LICENSE
-    ├── main.cpp
-    ├── README_EN.md
-    ├── README.md
-    ├── script
-    │   ├── main2.py
-    │   ├── main.py
-    │   ├── realsense.py
-    │   └── settings.py
-    └── source
-        └── Realsense.cpp
   
   ## 使用方法
   
   ### 基础流程
-
+  
   1. **初始化相机**：
-
+  
      ```
      Realsense camera;
      camera.init();
      camera.setCamera();
      ```
-
+  
   2. **采集彩色帧**：
-
+  
      ```
      auto frames = camera.getImg();
      if (!frames.empty()) {
