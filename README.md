@@ -51,11 +51,28 @@
   ## 文件结构
 
   - `main.cpp`：应用的入口。示范如何初始化相机和获取数据。
+  
   - `Realsense.hpp` 和 `Realsense.cpp`：定义并实现 `Realsense`类。
+
   - `CMakeLists.txt`：CMake 的构建配置文件。
 
+    ├── CMakeLists.txt
+    ├── include
+    │   └── Realsense.hpp
+    ├── LICENSE
+    ├── main.cpp
+    ├── README_EN.md
+    ├── README.md
+    ├── script
+    │   ├── main2.py
+    │   ├── main.py
+    │   ├── realsense.py
+    │   └── settings.py
+    └── source
+        └── Realsense.cpp
+  
   ## 使用方法
-
+  
   ### 基础流程
 
   1. **初始化相机**：
@@ -74,25 +91,25 @@
          cv::imshow("Color Image", frames[0]);
      }
      ```
-
+  
   3. **生成点云**：
-
+  
      ```
      pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZRGB>());
      cv::Mat colorImage;
      camera.getCloud(cloud, colorImage);
      ```
-
+  
   4. **关闭相机**：
-
+  
      ```
      camera.close();
      ```
-
+  
   ### 示例
-
+  
   下面的代码段显示如何在主循环中采集图像和点云：
-
+  
   ```
   #include "Realsense.hpp"
   #include <opencv2/opencv.hpp>
@@ -125,17 +142,17 @@
       return 0;
   }
   ```
-
+  
   ## 自定义
-
+  
   您可以在 `Realsense.cpp` 中的 `setCamera` 方法修改曝光、增益和分辨率等相机参数。
-
+  
   ## 许可证
-
+  
   本项目按 MIT 许可证发布。请参阅 LICENSE 文件以获取详情。
-
+  
   ## 致谢
-
+  
   - Intel RealSense SDK
   - OpenCV
   - Point Cloud Library
